@@ -6,8 +6,17 @@ $title = "Add Item";
 
 ?>
 
+<!--
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+-->
+
+<link href="https://cdn.datatables.net/v/bs5/dt-2.3.2/b-3.2.4/b-html5-3.2.4/cr-2.1.1/date-1.5.6/r-3.0.5/rr-1.5.0/sp-2.3.4/sl-3.0.1/sr-1.4.1/datatables.min.css" rel="stylesheet" integrity="sha384-4DWSO9AjW1QxrJuyO+Of6/hUOUppxivbkkTRhNAEsK2Fs5zLuBfAlnLixGHC7adt" crossorigin="anonymous">
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" integrity="sha384-VFQrHzqBh5qiJIU0uGU5CIW3+OWpdGGJM9LBnGbuIH2mkICcFZ7lPd/AAtI7SNf7" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" integrity="sha384-/RlQG9uf0M2vcTw3CX7fbqgbj/h8wKxw7C3zu9/GxcBPRKOEcESxaxufwRXqzq6n" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/v/bs5/dt-2.3.2/b-3.2.4/b-html5-3.2.4/cr-2.1.1/date-1.5.6/r-3.0.5/rr-1.5.0/sp-2.3.4/sl-3.0.1/sr-1.4.1/datatables.min.js" integrity="sha384-VBCFY5iuTaoOOvRnyA7CzLy/tCe0ocjSZc7pySzX2ucJfF88ZiZJphpnAMOkc1zv" crossorigin="anonymous"></script>
+
 
 <!--breadcrumb-->
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">

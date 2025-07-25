@@ -80,7 +80,7 @@
 	--bs-body-line-height: 1.5;
 	--bs-body-color: #212529;
 	--bs-body-color-rgb: 33, 37, 41;
-	--bs-body-bg: #fff;
+	--bs-body-bg: #f6fcff;
 	--bs-body-bg-2: #f1f1f1;
 	--bs-body-bg-3: #dadada;
 	--bs-body-bg-rgb: 255, 255, 255;
@@ -104,7 +104,7 @@
 	--bs-highlight-bg: #fff3cd;
 	--bs-border-width: 1px;
 	--bs-border-style: solid;
-	--bs-border-color: #dee2e6;
+	--bs-border-color: #c8e4ff;
 	--bs-border-color-translucent: rgba(0, 0, 0, 0.175);
 	--bs-border-radius: 0.375rem;
 	--bs-border-radius-sm: 0.15rem;

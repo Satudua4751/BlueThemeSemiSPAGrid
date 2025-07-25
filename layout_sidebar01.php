@@ -18,8 +18,8 @@ if (!defined('APP_SECURE')) {
             <div class="menu-title">Master</div>
         </a>
         <ul id="mymenu">
-            <li><a href="mstbarang" class="hover-1"><i class="material-icons-outlined">inventory</i>Products</a> </li>
-            <li><a href="mstbarang01" class="hover-1"><i class="material-icons-outlined">inventory</i>Products01</a> </li>
+            <li><a href="mstbarang" class="hover-1"><i class="material-icons-outlined">inventory</i>Products-Dtable</a> </li>
+            <li><a href="mstbarang01" class="hover-1"><i class="material-icons-outlined">inventory</i>Products-Grid</a> </li>
             <li><a href="mstlangganan" class="hover-1"><i class="material-icons-outlined">people</i>Customers</a> </li>
             <li><a href="mstsupplier" class="hover-1"><i class="material-icons-outlined">factory</i>Supplier</a> </li>
         </ul>

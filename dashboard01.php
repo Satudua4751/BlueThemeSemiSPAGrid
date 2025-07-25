@@ -78,15 +78,15 @@ $nmadm = $data['nmadm'];
       <!--Content -->
       <div id="halaman2"></div>
       <!--End Content-->
-
-      <!--start footer-->
-      <?php include 'layout_footer.php'; ?>
-      <!--end footer-->
     </div>
 
 
   </main>
   <!--end main wrapper-->
+
+  <!--start footer-->
+  <?php include 'layout_footer.php'; ?>
+  <!--end footer-->
 
   <!--start cart-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart"></div>
