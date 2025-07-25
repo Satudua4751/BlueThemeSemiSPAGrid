@@ -1,0 +1,149 @@
+.slick-header-columns {
+    background-color: #5b6f85 !important;
+    color: #fff
+}
+
+.slick-header-columns .slick-header-sortable {
+    background-color: #5b6f85 !important;
+    background-image: url('images/sortable.png');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    color: #fff;
+    cursor: pointer
+}
+
+.slick-header-columns .slick-header-column-sorted {
+    background-image: none
+}
+
+.slick-header-columns .slick-header-sortable .slick-sort-indicator {
+    margin-top: -12px
+}
+
+.slick-header-column.ui-state-default {
+    padding: 8px;
+    font-size: 14px;
+    line-height: 14pt;
+    border-right: 1px solid #aaa;
+    text-align: center;
+    height: 18px
+}
+
+.slick-headerrow {
+    background: #fafafa
+}
+
+.slick-headerrow-column {
+    background: #fafafa;
+    border-bottom: 0;
+    height: 100%
+}
+
+.slick-row.ui-state-active {
+    background: #f5f7d7
+}
+
+.slick-row1 {
+    position: absolute;
+    background: white;
+    border: 0;
+    color:#000;
+    line-height: 20px
+}
+
+.slick-row:hover {
+    background-color: #eee
+}
+
+.slick-row.selected {
+    z-index: 10;
+    background: #dfe8f6
+}
+
+.slick-cell {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom-color: #f1f1f1
+}
+
+.slick-group {
+    border-bottom: 2px solid silver
+}
+
+.slick-group-toggle {
+    width: 9px;
+    height: 9px;
+    margin-right: 5px
+}
+
+.slick-group-toggle.expanded {
+    background: url(images/collapse.gif) no-repeat center center
+}
+
+.slick-group-toggle.collapsed {
+    background: url(images/expand.gif) no-repeat center center
+}
+
+.slick-group-totals {
+    color: gray;
+    background: white
+}
+
+.slick-cell.selected {
+    background-color: #f0a30a;
+    color: #fff
+}
+
+.slick-sortable-placeholder {
+    background: silver !important
+}
+
+.slick-row.odd {
+    background: #f8f8f8
+}
+
+.slick-row.odd:hover {
+    background-color: #eee
+}
+
+.slick-row.ui-state-active {
+    background-color: #f5f7d7
+}
+
+.slick-row.loading {
+    opacity: .5;
+    filter: alpha(opacity=50)
+}
+
+.slick-cell.invalid {
+    border-color: red;
+    -moz-animation-duration: .2s;
+    -webkit-animation-duration: .2s;
+    -moz-animation-name: slickgrid-invalid-hilite;
+    -webkit-animation-name: slickgrid-invalid-hilite
+}
+
+.percent-complete-bar {
+    display: inline-block;
+    height: 10px
+}
+
+@-moz-keyframes slickgrid-invalid-hilite {
+    from {
+        box-shadow: 006pxred
+    }
+
+    to {
+        box-shadow: none
+    }
+}
+
+@-webkit-keyframes slickgrid-invalid-hilite {
+    from {
+        box-shadow: 006pxred
+    }
+
+    to {
+        box-shadow: none
+    }
+}
