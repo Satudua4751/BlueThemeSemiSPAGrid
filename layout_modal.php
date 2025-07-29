@@ -100,3 +100,58 @@
         </div>
     </div>
 </div>
+
+
+<!-- Large modal -->
+<div class="modal fade" id="jurnalModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="jurnalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content shadow-lg1">
+            <div class="modal-header bg-gray-200">
+                <h5 class="modal-title text-xm font-weight-bold text-info text-uppercase text text-shadow1" id="jurnalModalLabel">Detail Jurnal</h5>
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <div id="cetakjurnal"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Large modal -->
+<div class="modal fade" id="jurnalModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="jurnalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content shadow-lg1">
+            <div class="modal-header bg-gray-200">
+                <h5 class="modal-title text-xm font-weight-bold text-info text-uppercase text text-shadow1" id="jurnalModalLabel">Detail Jurnal</h5>
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <div id="cetakjurnal1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-animate" data-bs-backdrop="static" data-bs-keyboard="false" id="animateModal" role="dialog" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-content shadow-lg1">
+			<div class="modal-header">
+				<h5 class="modal-title">Modal title</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<h5>This is a modal window</h5>
+				<p>You can do the following things with it:</p>
+				<p><b>Read:</b> modal windows will probably tell you something important so don't
+					forget to read what they say.</p>
+				<p><b>Look:</b> a modal window enjoys a certain kind of attention; just look at it
+					and appreciate its presence.</p>
+				<p class="mb-0"><b>Close:</b> click on the button below to close the modal.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary shadow-2">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>

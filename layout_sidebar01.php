@@ -18,13 +18,12 @@ if (!defined('APP_SECURE')) {
             <div class="menu-title">Master</div>
         </a>
         <ul id="mymenu">
-            <li><a href="mstbarang" class="hover-1"><i class="material-icons-outlined">inventory</i>Products-Dtable</a> </li>
-            <li><a href="mstbarang01" class="hover-1"><i class="material-icons-outlined">inventory</i>Products-Grid</a> </li>
-            <li><a href="mstlangganan" class="hover-1"><i class="material-icons-outlined">people</i>Customers</a> </li>
-            <li><a href="mstsupplier" class="hover-1"><i class="material-icons-outlined">factory</i>Supplier</a> </li>
+            <li><a href="mstbarang" class="hover-1"><i class="material-icons-outlined">inventory</i>Barang-Dtable</a> </li>
+            <li><a href="mstbarang01" class="hover-1"><i class="material-icons-outlined">inventory</i>Barang-Grid</a> </li>
+            <li><a href="mstlangganan" class="hover-1"><i class="material-icons-outlined">people</i>Pelanggan</a> </li>
+            <li><a href="mstsupplier" class="hover-1"><i class="material-icons-outlined">factory</i>Pemasok</a> </li>
         </ul>
     </li>
-
     <li class="menu-label">Transaksi</li>
     <li>
         <a class="has-arrow" href="javascript:;">
@@ -44,6 +43,21 @@ if (!defined('APP_SECURE')) {
         <ul id="mymenu">
             <li><a href="penjualan01" class="hover-1"><i class="material-icons-outlined">store</i>Penjualan</a> </li>
             <li><a href="repjual01" class="hover-1"><i class="material-icons-outlined">assessment</i>Report Penjualan</a> </li>
+        </ul>
+    </li>
+    <li class="menu-label">Akuntansi</li>
+    <li>
+        <a class="has-arrow" href="javascript:;">
+            <div class="parent-icon"><i class="material-icons-outlined">warehouse</i> </div>
+            <div class="menu-title">Daftar COA</div>
+        </a>
+        <ul id="mymenu">
+            <li><a href="glcoa01" class="hover-1"><i class="material-icons-outlined">assessment</i>Daftar COA</a> </li>
+            <li><a href="gljurnal01" class="hover-1"><i class="material-icons-outlined">assessment</i>Jurnal Harian</a> </li>
+            <li><a href="glbulanan01" class="hover-1"><i class="material-icons-outlined">assessment</i>Jurnal Bulanan</a> </li>
+            <li><a href="gldetailcoa01" class="hover-1"><i class="material-icons-outlined">assessment</i>Jurnal Detail</a> </li>
+            <li><a href="glpercobaan01" class="hover-1"><i class="material-icons-outlined">assessment</i>Jurnal Percobaan</a> </li>
+            <li><a href="glreport01" class="hover-1"><i class="material-icons-outlined">assessment</i>Jurnal Report</a> </li>
         </ul>
     </li>
     <li class="menu-label">Report</li>
