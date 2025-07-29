@@ -23,7 +23,7 @@ $title = "Add Item";
     </div>
 </div>
 <!--end breadcrumb-->
-
+<?php echo "Before " . time(); ?>
 <div class="row">
     <div class="col-12 col-lg-12">
         <div class="card shadow-white">
@@ -44,7 +44,7 @@ $title = "Add Item";
                             <input type="text" class="form-control border-end-0" id="txtSearch2" placeholder="Search">
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" id="filter-status1">
+                            <select class="form-select" id="filter-status1" multiple>
                                 <option value="">-- Semua Status --</option>
                                 <option value="ongoing">Ongoing</option>
                                 <option value="finish">Finish</option>
@@ -195,7 +195,10 @@ $title = "Add Item";
         forceFitColumns: true,
         enableHtmlRendering: true, // disabling HTML rendering means that `innerHTML` will not be used by SlickGrid (better for CSP)
         topPanelHeight: 35,
-        rowHeight: 28
+        rowHeight: 28,
+        createFooterRow: true,
+        showFooterRow: true,
+        footerRowHeight: 30
         // Custom Tooltip options can be defined in a Column or Grid Options or a mixed of both (first options found wins)
         //customTooltip: {
         //    formatter: tooltipFormatter,
@@ -205,7 +208,7 @@ $title = "Add Item";
     let sortcol = "title";
     let sortdir = 1;
     let searchString = "";
-    let statusFilter = "";
+    let statusFilter = [];
 
     function myFilter(item, args) {
         const searchMatch = args.searchString === "" || item["nmkon"].toLowerCase().includes(args.searchString.toLowerCase());
@@ -219,6 +222,27 @@ $title = "Add Item";
         return (x == y ? 0 : (x > y ? 1 : -1));
     }
 
+    function updateFooterTotals() {
+        let total = 0;
+
+        // Ambil hanya item yang lolos filter / pencarian
+        for (let i = 0; i < dataView.getLength(); i++) {
+            const item = dataView.getItem(i);
+            let val = parseFloat(item.totaljual);
+            if (!isNaN(val)) total += val;
+        }
+
+        // Update footer kolom 'totaljual'
+        const footerRowNode = grid.getFooterRowColumn("totaljual");
+        if (footerRowNode) {
+            footerRowNode.innerHTML = `<div class="text-end font-weight-bolder">Rp ${total.toLocaleString("id-ID", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })}</div>`;
+        }
+    }
+
+
     // Ambil data dari PHP
     fetch('./api/trxjual01.php')
         .then(res => res.json())
@@ -229,6 +253,7 @@ $title = "Add Item";
             }); // SlickGrid wajib punya unique `id`
             //console.log("DATA TERAMBIL:", data); // Tambahan debug
             dataView.setItems(data);
+            updateFooterTotals(); // <-- Tambahkan ini di sini!
             setTimeout(() => window.dispatchEvent(new Event('resize')), 500); // Untuk paksa layout refresh
         })
         .catch(err => console.error("Gagal ambil data:", err));
@@ -269,6 +294,7 @@ $title = "Add Item";
 
         // using native sort with comparer
         dataView.sort(comparer, args.sortAsc);
+        updateFooterTotals(); // <-- Tambahkan ini di sini!
     });
 
     // wire up model events to drive the grid
@@ -277,11 +303,13 @@ $title = "Add Item";
     dataView.onRowCountChanged.subscribe(function(e, args) {
         grid.updateRowCount();
         grid.render();
+        updateFooterTotals(); // <-- Tambahkan ini di sini!
     });
 
     dataView.onRowsChanged.subscribe(function(e, args) {
         grid.invalidateRows(args.rows);
         grid.render();
+        updateFooterTotals(); // <-- Tambahkan ini di sini!
     });
 
     dataView.onPagingInfoChanged.subscribe(function(e, pagingInfo) {
@@ -298,12 +326,23 @@ $title = "Add Item";
         //console.log('on Before Paging Info Changed - Previous Paging:: ', previousPagingInfo);
     });
 
+    $('#filter-status1').select2({
+        theme: "bootstrap-5",
+        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+        placeholder: $(this).data('placeholder'),
+        closeOnSelect: false,
+    });
+
+
     // Handle saat select berubah
     document.querySelector("#filter-status1").addEventListener('change', (e) => {
+        alert("kesini tidak ya");
         SlickGlobalEditorLock.cancelCurrentEdit();
-        statusFilter = e.target.value.trim();
+        const selectedStatuses = $(e.target).val(); // ✅ Gunakan e.target, bukan this
+        statusFilter = selectedStatuses || [];
         updateFilter();
         dataView.refresh();
+        updateFooterTotals();
     });
 
     document.querySelectorAll("#txtSearch2").forEach(elm => elm.addEventListener('keyup', (e) => {
@@ -313,6 +352,7 @@ $title = "Add Item";
         searchString = (e.target.value || '').trim();
         updateFilter();
         dataView.refresh();
+        updateFooterTotals(); // <-- Tambahkan ini di sini!
     }));
 
     function updateFilter() {
@@ -321,6 +361,7 @@ $title = "Add Item";
             statusFilter
         });
         dataView.refresh();
+        updateFooterTotals(); // <-- Tambahkan ini di sini!
     }
 
     // initialize the model after all the events have been hooked up

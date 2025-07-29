@@ -819,7 +819,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
         let footerRowNode = grid.getFooterRowColumn("totaljual");
         if (footerRowNode) {
-            footerRowNode.innerHTML = `<div class="text-end">Rp ${total.toLocaleString("id-ID", {
+            footerRowNode.innerHTML = `<div class="text-end font-weight-bolder">Rp ${total.toLocaleString("id-ID", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         })}</div>`;

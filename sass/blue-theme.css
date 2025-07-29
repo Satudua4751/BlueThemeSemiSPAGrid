@@ -1226,7 +1226,7 @@
     border-width: 1px 1px 0px 0px;
     float: left;
     color: var(--bs-body-color);
-    font-size: var(--footerrow-font-size, 12px);
+    font-size: var(--footerrow-font-size, 13px);
     height: 30px;
     line-height: 18px;
     margin: 0;

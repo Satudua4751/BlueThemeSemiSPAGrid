@@ -31,14 +31,12 @@ if (!defined('APP_SECURE')) {
 <!-- Select2 -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-<!--main css
-
--->
+<!--main css-->
 <link rel="stylesheet" href="assets/css/bootstrap-extended.css">
+<link rel="stylesheet" href="assets/css/select2-costum.css">
 <link rel="stylesheet" href="sass/main.css?v=1.0.5">
 <link rel="stylesheet" href="assets/css/waves.css">
 <link rel="stylesheet" href="assets/css/stylehover.css?v=1.0.1">
-
 <link rel="stylesheet" href="sass/blue-theme.css?v=1.0.5">
 <link rel="stylesheet" href="sass/responsive.css">
 
