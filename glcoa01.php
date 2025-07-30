@@ -315,7 +315,7 @@ $tahun = [
 
 
 	//menampilkan data yang akan diedit
-	$(document).on('click', '#editjurnal', function(e) {
+	$(document).on('click', '.editjurnal', function(e) {
 		e.preventDefault();
 		$("#ModalEdit").modal('show');
 		$.post('glcoa01_edit.php', {
@@ -360,7 +360,7 @@ $tahun = [
 	});
 
 	//menampilkan konfirmasi data yang akan dihapus
-	$(document).on('click', '#deletejurnal', function(e) {
+	$(document).on('click', '.deletejurnal', function(e) {
 		e.preventDefault();
 		$("#ModalHapus").modal('show');
 		$.post('glcoa01_hapus.php', {

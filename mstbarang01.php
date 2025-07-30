@@ -47,6 +47,7 @@ $title = "Add Item";
                                 <option value="">-- All Product --</option>
                                 <option value="barang">Spare Part</option>
                                 <option value="material">Material</option>
+                                <option value="jasa">Jasa</option>
                                 <option value="umum">General</option>
                             </select>
                         </div>

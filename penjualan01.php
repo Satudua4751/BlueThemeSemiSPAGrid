@@ -23,7 +23,6 @@ $title = "Add Item";
     </div>
 </div>
 <!--end breadcrumb-->
-<?php echo "Before " . time(); ?>
 <div class="row">
     <div class="col-12 col-lg-12">
         <div class="card shadow-white">

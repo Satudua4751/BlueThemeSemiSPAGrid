@@ -1,3 +1,6 @@
+<?php 
+$title = "";
+?>
 <h3 class="font-weight-bold text-info text-sm-center text-uppercase">LabaRugi <?php echo format_tanggal2($bln3); ?></h3>
 </br>
 <div class="container-fluid">
@@ -106,14 +109,14 @@
 						$saldo1 = $data['saldo01a'];
 						$formatted1 = fNumber($saldo1, 2, '.', ',');
 						$class1 = 'text-end' . ($saldo1 < 0 ? ' text-danger' : '');
-						$color1 = ($saldo1 < 0) ? '#f00' : '#000';
+						$color1 = ($saldo1 < 0) ? '#f00' : 'inherit';
 						echo '<td class="' . $class1 . '"><a href="javascript:void(0);" class="viewjurnal" data-id="' . urlencode($xnorek1) . $bln . $thn . '" style="text-decoration:none;color:' . $color1 . ';">' . $formatted1 . '</a></td>';
 
 						// SALDO 02A
 						$saldo2 = $data['saldo02a'];
 						$formatted2 = fNumber($saldo2, 2, '.', ',');
 						$class2 = 'text-end' . ($saldo2 < 0 ? ' text-danger' : '');
-						$color2 = ($saldo2 < 0) ? '#f00' : '#000';
+						$color2 = ($saldo2 < 0) ? '#f00' : 'inherit';
 						echo '<td class="' . $class2 . '"><a href="javascript:void(0);" class="viewjurnal" data-id="' . urlencode($xnorek1) . $bln1 . $thn . '" style="text-decoration:none;color:' . $color2 . ';">' . $formatted2 . '</a></td>';
 					}
 					echo '</tr>';
@@ -126,7 +129,7 @@
 	<br />
 </div>
 
-<?php include("layout_delete.php"); ?>
+<?php include("layout_modal.php"); ?>
 
 <script type="text/javascript">
 	$("#datajurnal tbody").on("click", ".viewjurnal", function() {
@@ -135,7 +138,7 @@
 		//alert(norek);
 		$.ajax({
 			method: "POST",
-			url: "gllabarugi_print1_det.php",
+			url: "glprint_det.php",
 			data: {
 				action: action,
 				norek: norek

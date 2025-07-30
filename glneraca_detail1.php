@@ -49,7 +49,7 @@ if (isset($_POST["action"])) {
             $qryinsert = mysqli_query($conn1, $sqlinsert);
 
             if ($norek1 != '') {
-                $sqlglmas = "SELECT * FROM glmas WHERE  norek  LIKE '%" . $norek1 . "%'";
+                $sqlglmas = "SELECT * FROM glmas$thn WHERE  norek  LIKE '%" . $norek1 . "%'";
                 $resglmas = mysqli_query($conn1, $sqlglmas);
                 while ($dtsglmas = mysqli_fetch_array($resglmas)) {
                     $tprek =  $dtsglmas['tprek'];

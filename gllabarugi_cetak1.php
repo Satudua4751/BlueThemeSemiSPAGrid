@@ -15,7 +15,7 @@ $pagedesc = "Labarugi ";
 $pagetitle = str_replace(" ", "_", $pagedesc)
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
 	<meta charset="utf-8">
@@ -25,14 +25,17 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 
 	<title><?php echo $pagetitle . $bln3 ?></title>
 	<link href="foto/logo-03b.png" rel="icon" type="images/x-icon">
-	<!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" type="text/css" href="libs/css/styles.css">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="libs/css/offline-font.css">
-	<!-- Custom Fonts -->
-	<link rel="stylesheet" href="libs/css/all.css">
+	<!--bootstrap css -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<!--main css -->
+	<link rel="stylesheet" href="assets/css/bootstrap-extended.css">
+	<link rel="stylesheet" href="sass/main.css">
+	<link rel="stylesheet" href="sass/blue-theme.css?v=1.0.5">
 	<!-- jQuery -->
-	<script src="libs/js/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>

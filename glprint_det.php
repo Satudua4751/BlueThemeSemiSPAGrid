@@ -46,7 +46,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc);
 	</section>
 
 	<section id="body-of-report">
-		<?php include("gllabarugi_print1_det_cetak.php"); ?>
+		<?php include("glprint_det_cetak.php"); ?>
 	</section>
 
 	<!-- Bootstrap Core JavaScript -->

@@ -19,7 +19,7 @@
 				<?php
 				//echo 'Tahun Detail ' . $xnorek . ' - ' . $bln . ' - ' . $thn;
 				$i = 1;
-				$sql = "SELECT * FROM glmas where norek = '" . $xnorek . "' ORDER BY norek ASC";
+				$sql = "SELECT * FROM glmas$thn where norek = '" . $xnorek . "' ORDER BY norek ASC";
 				$ress = mysqli_query($conn1, $sql);
 				$slda = $debet = $kredit = 0;
 				while ($data = mysqli_fetch_array($ress)) {

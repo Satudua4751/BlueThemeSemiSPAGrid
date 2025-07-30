@@ -126,9 +126,21 @@ $sqlgl = "SELECT glmas$thn.norek,glmas$thn.nmrek,glmas$thn.tprek,glmas$thn.grrek
 			}
 		?>
 			<td>
-				<button id="viewjurnal" data-id="<?php echo $data['norek'] . $bln . $thn; ?>" class="btn btn-primary waves-effect btn-sm"><i class="leading-icon fa-solid fa-print"></i></button>
-				<button id="editjurnal" data-id="<?php echo $data['norek'] . $bln . $thn; ?>" class="btn btn-success waves-effect btn-sm"><i class="leading-icon fa fa-pen"></i></button>
-				<button id="deletejurnal" data-id="<?php echo $data['norek'] . $bln . $thn; ?>" class="btn btn-danger waves-effect btn-sm"><i class="leading-icon fa fa-trash"></i></button>
+				<!--<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+					<button id="viewjurnal" data-id="<?php echo $data['norek'] . $bln . $thn; ?>" class="btn btn-info waves-effect btn-sm"><i class="leading-icon fa-solid fa-print"></i></button>
+					<button id="editjurnal" data-id="<?php echo $data['norek'] . $bln . $thn; ?>" class="btn btn-dark waves-effect btn-sm"><i class="leading-icon fa fa-pen"></i></button>
+					<button id="deletejurnal" data-id="<?php echo $data['norek'] . $bln . $thn; ?>" class="btn btn-danger waves-effect btn-sm"><i class="leading-icon fa fa-trash"></i></button>
+				</div>-->
+				<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-info dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Opsi</button>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item viewjurnal" href="#" data-id="<?php echo $data['norek'] . $bln . $thn; ?>"><i class="leading-icon fa-solid fa-print"></i> View</a> </li>
+							<li><a class="dropdown-item editjurnal" href="#" data-id="<?php echo $data['norek'] . $bln . $thn; ?>"><i class="leading-icon fa fa-pen"></i> Edit</a> </li>
+							<li><a class="dropdown-item deletejurnal" href="#" data-id="<?php echo $data['norek'] . $bln . $thn; ?>"><i class="leading-icon fa fa-trash"></i> Delete</a> </li>
+						</ul>
+					</div>
+				</div>
 			</td>
 		<?php echo '</td>';
 			echo '</tr>';
@@ -162,7 +174,7 @@ $sqlgl = "SELECT glmas$thn.norek,glmas$thn.nmrek,glmas$thn.tprek,glmas$thn.grrek
 			],
 			dom: "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
 				"<'row'<'col-sm-12't>>" +
-				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+				"<'row'<'col-sm-12 col-md-5 mt-2'i><'col-sm-12 col-md-7'p>>",
 			buttons: [{
 					extend: 'excel',
 					text: '<i class="fa fa-file-excel"></i> ',
@@ -181,14 +193,14 @@ $sqlgl = "SELECT glmas$thn.norek,glmas$thn.nmrek,glmas$thn.tprek,glmas$thn.grrek
 				}
 			],
 			lengthMenu: [
-				[30, 60, -1],
-				[30, 60, "All"]
+				[10, 20, -1],
+				[10, 20, "All"]
 			],
 			pagingType: "full_numbers"
 		});
 
 		//print 
-		$("#datajurnal tbody").on("click", "#viewjurnal", function() {
+		$("#datajurnal tbody").on("click", ".viewjurnal", function() {
 			var action = 'getfilter';
 			var data0 = table.row($(this).parents('tr')).data();
 			var norek = $(this).attr('data-id');

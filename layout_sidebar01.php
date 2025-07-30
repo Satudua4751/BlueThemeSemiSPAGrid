@@ -31,8 +31,8 @@ if (!defined('APP_SECURE')) {
             <div class="menu-title">Pembelian</div>
         </a>
         <ul id="mymenu">
-            <li><a href="pembelian"><i class="material-icons-outlined">local_mall</i>Pembelian</a> </li>
-            <li><a href="repbeli"><i class="material-icons-outlined">assessment</i>Report Pembelian</a> </li>
+            <li><a href="pembelian" class="hover-1"><i class="material-icons-outlined">local_mall</i>Pembelian</a> </li>
+            <li><a href="repbeli" class="hover-1"><i class="material-icons-outlined">assessment</i>Report Pembelian</a> </li>
         </ul>
     </li>
     <li>
@@ -68,9 +68,9 @@ if (!defined('APP_SECURE')) {
             <div class="menu-title">Report</div>
         </a>
         <ul id="mymenu">
-            <li><a href="reporder" target="_blank"><i class="material-icons-outlined">pending_actions</i>Out-Standing</a></li>
-            <li><a href="reponproses" target="_blank"><i class="material-icons-outlined">pending_actions</i>On-Going</a></li>
-            <li><a href="repmargin" target="_blank"><i class="material-icons-outlined">show_chart</i>Margin</a></li>
+            <li><a href="reporder" class="hover-1"><i class="material-icons-outlined">pending_actions</i>Out-Standing</a></li>
+            <li><a href="reponproses" class="hover-1"><i class="material-icons-outlined">pending_actions</i>On-Going</a></li>
+            <li><a href="repmargin" class="hover-1"><i class="material-icons-outlined">show_chart</i>Margin</a></li>
         </ul>
     </li>
     <li class="menu-label">Administration</li>
@@ -81,9 +81,9 @@ if (!defined('APP_SECURE')) {
             <div class="menu-title">Registration</div>
         </a>
         <ul id="mymenu">
-            <li><a href="usersreg"><i class="material-icons-outlined">how_to_reg</i>Registration</a> </li>
-            <li><a href="usersret"><i class="material-icons-outlined">refresh</i>Reset Account</a> </li>
-            <li><a href="usersret"><i class="material-icons-outlined">lock_reset</i>Forgot Pass</a> </li>
+            <li><a href="usersreg" class="hover-1"><i class="material-icons-outlined">how_to_reg</i>Registration</a> </li>
+            <li><a href="usersret" class="hover-1"><i class="material-icons-outlined">refresh</i>Reset Account</a> </li>
+            <li><a href="usersret" class="hover-1"><i class="material-icons-outlined">lock_reset</i>Forgot Pass</a> </li>
         </ul>
     </li>
 </ul>

@@ -97,7 +97,7 @@ $nmadm = $data['nmadm'];
   <!--end overlay-->
 
   <!--start switcher-->
-  <button class="btn btn-info position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2  waves-effect"
+  <button class="btn btn-info position-fixed bottom-0 end-0 mb-5 me-2 d-flex align-items-center gap-2 waves-effect"
     type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>
   </button>

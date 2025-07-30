@@ -88,6 +88,7 @@ include("function/format_rupiah.php");
 <script type="text/javascript">
 	$(document).ready(function() {
 		var table = $("#datatglproses").DataTable({
+			ordering: false,
 			bDestroy: true,
 			responsive: true,
 			processing: true,
@@ -98,18 +99,6 @@ include("function/format_rupiah.php");
 					targets: -1,
 					data: null,
 					defaultContent: "<a id='trxnrc' class='btn btn-primary waves-effect btn-sm'><i class='fa-solid fa-print'></i> Neraca</a> - <a id='trxrl' class='btn btn-primary waves-effect btn-sm'><i class='fa-solid fa-print'></i> LabaRugi</a>"
-				},
-				{
-					searchPanes: {
-						show: true
-					},
-					targets: [2, 3]
-				},
-				{
-					searchPanes: {
-						show: false
-					},
-					targets: [0, 1, 4]
 				}
 			],
 			lengthMenu: [

@@ -47,8 +47,20 @@ $thn = date('Y');
 		while ($data = mysqli_fetch_array($resgl)) {
 			echo '<tr>';
 			echo '<td class="text-start">' . $data['norek'] . '</td>';
-			echo '<td class="text-start">' . $data['nmrek'] . '</td>';
-			echo '<td class="text-start">' . $data['grrek'] . '</td>';
+			$color1 = 'inherit';
+			echo '<td class="text-start"><a href="javascript:void(0);" class="viewjurnal hover-2 inner-wrapper" data-id="' . urlencode($data['norek']) . $bln . $thn . '" style="text-decoration:none;color:' . $color1 . ';">' . $data['nmrek'] . '</a></td>';
+			if ($data['grrek'] == '1') {
+				echo '<td class="text-start">Aset</td>';
+			} elseif ($data['grrek'] == '2') {
+				echo '<td class="text-start">Hutang</td>';
+			} elseif ($data['grrek'] == '3') {
+				echo '<td class="text-start">Modal</td>';
+			} elseif ($data['grrek'] == '4') {
+				echo '<td class="text-start">Pendapatan</td>';
+			} elseif ($data['grrek'] == '5') {
+				echo '<td class="text-start">Biaya</td>';
+			}
+
 			echo '<td class="text-start">' . $data['tprek'] . '</td>';
 			if ($data['tprek'] == 'D') {
 				echo '<td class="text-end">' . number_format($data['saldo' . $bln], 2, '.', ',') . '</td>';
@@ -109,15 +121,18 @@ $thn = date('Y');
 	</tfoot>
 </table>
 
+<?php include("layout_modal.php"); ?>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		var table = $("#datapercobaan1").DataTable({
 			bDestroy: true,
+			ordering: false,
 			responsive: true,
 			processing: true,
 			dom: "<'row'<'col-sm-12 col-md-6'B><'col-sm-12 col-md-6'f>>" +
 				"<'row'<'col-sm-12't>>" +
-				"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+				"<'row'<'col-sm-12 col-md-5 mt-2'i><'col-md-7'p>>",
 			buttons: [{
 					extend: 'excel',
 					text: '<i class="fa fa-file-excel"></i> ',
@@ -186,8 +201,6 @@ $thn = date('Y');
 					.column(11).data().reduce(function(a, b) {
 						return intVal(a) + intVal(b);
 					});
-
-
 
 
 				// Total1 over this page
@@ -260,7 +273,7 @@ $thn = date('Y');
 				$('tr:eq(0) td:eq(5)', api.table().footer()).html(numFormat(pageTotal5));
 				$('tr:eq(0) td:eq(6)', api.table().footer()).html(numFormat(pageTotal6));
 				$('tr:eq(0) td:eq(7)', api.table().footer()).html(numFormat(pageTotal7));
-				$('tr:eq(0) td:eq(8)', api.table().footer()).html(numFormat(pageTotal8));	
+				$('tr:eq(0) td:eq(8)', api.table().footer()).html(numFormat(pageTotal8));
 
 
 				$('tr:eq(1) td:eq(1)', api.table().footer()).html(numFormat(allPages1));
@@ -272,6 +285,25 @@ $thn = date('Y');
 				$('tr:eq(1) td:eq(7)', api.table().footer()).html(numFormat(allPages7));
 				$('tr:eq(1) td:eq(8)', api.table().footer()).html(numFormat(allPages8));
 			}
+		});
+
+		$("#datapercobaan1 tbody").on("click", ".viewjurnal", function() {
+			var action = 'getfilter';
+			var norek = $(this).attr('data-id');
+			//alert(norek);
+			$.ajax({
+				method: "POST",
+				url: "glprint_det.php",
+				data: {
+					action: action,
+					norek: norek
+				},
+				success: function(data) {
+					$('#cetakjurnal1').html(data);
+					// Display Modal
+					$('#jurnalModal1').modal('show');
+				}
+			});
 		});
 
 		$('#datapercobaan1').parent().addClass("table-responsive");

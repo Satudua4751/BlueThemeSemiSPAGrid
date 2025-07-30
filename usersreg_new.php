@@ -12,7 +12,7 @@ if (!defined('APP_SECURE') && (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SE
 ?>
 
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
